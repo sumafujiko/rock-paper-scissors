@@ -16,16 +16,16 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    Get results of playerSelection and computerSelection
-    "Rock" > "Scissors",
-    "Scissors" > "Paper",
-    "Paper" > "Rock"
-    If both values match, replay playRound. 
-    If playerSelection is greater than computerSelection, log "You win! x beats y", otherwise "You lose! x beats y"
+    if (gameRules[playerSelection] === computerSelection) {
+        return ("You win! " + playerSelection + " beats " + computerSelection + ".")
+    } else if (playerSelection === computerSelection) {
+        return ("That was a tie! Try again.");
+    } else {
+        return ("You lose! " + computerSelection + " beats " + playerSelection + ".")
+    }
 }
 
 const playerSelection = "Rock";
 const computerSelection = getComputerChoice();
 
 console.log(playRound(playerSelection, computerSelection));
-
